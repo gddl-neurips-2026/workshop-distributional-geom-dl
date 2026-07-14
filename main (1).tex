@@ -1,0 +1,333 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2026
+
+% The authors should use one of these tracks.
+% Before accepting by the NeurIPS conference, select one of the options below.
+% 0. "default" for submission
+% \usepackage{neurips_2026}
+% the "default" option is equal to the "main" option, which is used for the Main Track with double-blind reviewing.
+% 1. "main" option is used for the Main Track
+%  \usepackage[main]{neurips_2026}
+% 2. "position" option is used for the Position Paper Track
+%  \usepackage[position]{neurips_2026}
+% 3. "eandd" option is used for the Evaluations & Datasets Track
+ % \usepackage[eandd]{neurips_2026}
+% 4. "creativeai" option is used for the Creative AI Track
+%  \usepackage[creativeai]{neurips_2026}
+% 5. "sglblindworkshop" option is used for the Workshop with single-blind reviewing
+ \usepackage[sglblindworkshop]{neurips_2026}
+% 6. "dblblindworkshop" option is used for the Workshop with double-blind reviewing
+ % \usepackage[dblblindworkshop]{neurips_2026}
+
+% After being accepted, the authors should add "final" behind the track to compile a camera-ready version.
+% 1. Main Track
+ % \usepackage[main, final]{neurips_2026}
+% 2. Position Paper Track
+%  \usepackage[position, final]{neurips_2026}
+% 3. Evaluations & Datasets Track
+ % \usepackage[eandd, final]{neurips_2026}
+% 4. Creative AI Track
+%  \usepackage[creativeai, final]{neurips_2026}
+% 5. Workshop with single-blind reviewing
+%  \usepackage[sglblindworkshop, final]{neurips_2026}
+% 6. Workshop with double-blind reviewing
+%  \usepackage[dblblindworkshop, final]{neurips_2026}
+% Note. For the workshop paper template, both \title{} and \workshoptitle{} are required, with the former indicating the paper title shown in the title and the latter indicating the workshop title displayed in the footnote.
+% For workshops (5., 6.), the authors should add the name of the workshop, "\workshoptitle" command is used to set the workshop title.
+% \workshoptitle{WORKSHOP TITLE}
+
+% "preprint" option is used for arXiv or other preprint submissions
+ % \usepackage[preprint]{neurips_2026}
+
+% to avoid loading the natbib package, add option nonatbib:
+%    \usepackage[nonatbib]{neurips_2026}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+
+\usepackage{graphicx}
+\usepackage{cleveref}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\title{Bridging Optimal Transport, Learning and Structured Data: Toward Geometric Distributional Learning}
+
+\begin{document}
+
+
+\maketitle
+
+\vspace*{-1.6cm} %no need to list authors
+
+% \begin{abstract}
+% \end{abstract}
+
+\textbf{Tagline\;} Learning with structured data and probability distributions: synergies between optimal transport and geometric deep learning.
+
+\section{Main Proposal} % (no more than three pages)
+% \begin{center}
+%     {\color{red} optionally, \url{https://URL.for.the.workshop.website}}
+% \end{center}
+
+Modern machine learning increasingly relies on representing complex data through their \textbf{geometric structure} or \textbf{probability distribution}. Geometric Deep Learning~\cite{bronstein2017geometric} has made it possible to encode symmetries, invariances, equivariance~\citep{satorras2021n}, and relational information in non-Euclidean domains, such as graphs and manifolds~\citep{kipf2016semi,bruna2013spectral,velivckovic2017graph,katsman2024riemannian}, with many successful applications, ranging from protein structure prediction to neuroscience \citep{jumper2021highly,lam2022graphcast,bessadok2022graph}. In parallel, viewing data or features as probability distributions has led to powerful methodologies in deep learning. In particular, \textbf{optimal transport} (OT) provides a natural framework for comparing, aligning, and transforming data distributions~\citep{peyre2019computational}, and has contributed to notable advances in generative modeling~\citep{arjovsky2017wasserstein}, attention-based architectures~\citep{castin2024smooth,sander2022sinkformers} and representation learning~\citep{courty2016optimal}. 
+
+Although these perspectives are connected, they are often developed separately: geometric models typically focus on the structure of the underlying domain, while most distributional methods operate in Euclidean spaces or treat geometry only implicitly. Yet, recent works show that combining geometric and distributional principles can lead to more effective learning models. In particular, geometry-aware optimal-transport formulations, which adapt the transport problem to the structure of the underlying space, have led to models with improved scalability, interpretability and robustness. Notable examples include geometry-aware optimal transport methods~\citep{scarvelis2023riemannian}, such as Gromov-Wasserstein approaches for graph representation learning and structured prediction~\citep{peyre2016gromov,titouan2019optimal,vincent2021online,vincentcuaz2022template,brogat2022learning,krzakala2024any2graph}, as well as sliced and projection-based methods that scale OT to high-dimensional distributions~\citep{rabin2012wasserstein,bonneel2015sliced,nadjahi2020statistical}, including distributions supported on manifolds~\citep{kolouri2019generalized,nguyen2020distributional,bonet2022spherical,bonet2024sliced}.
+
+This workshop will focus on this emerging area that we call \textbf{Geometric Distributional Deep Learning}: learning systems that jointly model the geometry and distributional nature of data, features and representations. The goal is to bring together researchers in geometric deep learning, computational optimal transport, generative modeling, graph and manifold learning, and deep learning theory around a shared question:
+\begin{center}
+\emph{How can geometry and distributions be combined to design more scalable, efficient, and interpretable models for structured data?}
+\end{center}
+
+By bridging these communities, the workshop will foster discussion around several core challenges for Geometric Distributional Deep Learning:
+\begin{enumerate}
+\item \emph{Geometry-aware transport and distributional modeling.} How should optimal transport and other distributional tools be adapted to adequately reflect the structure of graphs, manifolds, or physical systems?
+\item \emph{Neural architectures for distributions on non-Euclidean domains.} How can we design layers and models that process probability distributions on graphs, manifolds, or learned latent geometries? In particular, how can distributional representations enrich GNNs? 
+\item \emph{Scalable computation on structured spaces.} How can tools for computational optimal transport, such as sliced methods, entropic regularization and neural approximations, make geometry-aware distributional methods usable at the scale of modern deep learning?
+\end{enumerate}
+
+The workshop will be relevant to several NeurIPS communities. Researchers in geometric deep learning will benefit from a broader distributional and optimal transport perspective on structured data, while researchers in optimal transport will encounter ML-driven formulations involving graphs, manifolds, neural architectures and large-scale constraints. The workshop will also connect researchers in transformers, generative modeling and representation learning with mathematical tools for understanding attention and latent distributions beyond Euclidean token spaces. Finally, application-oriented researchers will find in this workshop a venue to discuss how methods combining geometry and distributional dynamics can address challenges in molecular modeling, climate and weather prediction, neuroscience and the physical sciences.
+
+\textbf{Why now?} We believe the timing is particularly appropriate as several developments are converging: geometric deep learning, distributional representations and computational tools such as optimal transport have matured into practical methodologies. Yet, these developments are still largely pursued in separate communities, with different assumptions and benchmarks. \textbf{This workshop is intended to provide a broader forum on when and how geometric and distributional perspectives should be combined in deep learning.} Without such coordination, the field risks developing fragmented methods and benchmarks, where geometry-aware transport tools, geometric architectures, and application-driven datasets evolve independently rather than informing one another.
+
+\paragraph{Earlier Versions and Related Workshops} This is the first submission of this workshop proposal, and there has been no previous edition. Several recent NeurIPS, ICML and ICLR workshops have explored related themes. These include \emph{Optimal Transport and Machine Learning} at NeurIPS (five editions between 2014 and 2023), as well as workshops on geometry, topology, symmetry and structure-induced learning, such as \emph{Topology, Algebra, and Geometry in Learning} (ICML 2022, 2023), \emph{Symmetry and Geometry in Neural Representations} (NeurIPS 2022, 2023, 2024, 2025), \emph{Non-Euclidean Foundation Models and Geometric Learning} (NeurIPS 2024, 2025), and \emph{Geometry-grounded Representation Learning and Generative Modeling} (ICML 2024, ICLR 2026). \textbf{These workshops cover research directions relevant to our proposal, but mostly as separate threads. Our workshop is designed to bring them together}, with the additional goal of identifying synergies, shared challenges and open questions for learning with distributions on structured data.
+
+% For example, the workshop \emph{Optimal Transport and Machine Learning} was held at NeurIPS in 2014, 2017, 2019, 2021, and 2023, fostering interactions between the OT and Machine Learning communities. Other workshops have highlighted the role of geometry in advancing machine learning. At ICML 2022 and 2023, the workshop \emph{Topology, Algebra, and Geometry in Learning} examined geometric and topological perspectives on learning. More recently, \emph{Unifying Representations in Neural Models} (NeurIPS 2024 and 2025) focused on understanding neural representations, while \emph{Symmetry and Geometry in Neural Representations} (NeurIPS 2024 and 2025) explored the interplay between geometry, symmetry, and deep learning. At NeurIPS 2025, \emph{Non-Euclidean Foundation Models and Geometric Learning: Advancing AI Beyond Euclidean Frameworks} addressed non-Euclidean representation learning and foundation models, and \emph{Geometry-grounded Representation Learning and Generative Modeling} (ICML 2024, ICLR 2026) focused on generative modeling and learning from non-Euclidean data. While these workshops are closely related to our topic, they typically emphasize either the use of OT in machine learning or the application of geometric methods to learning. In contrast, our workshop is centered on the intersection of these two directions, with a particular focus on probability distributions defined over non-Euclidean spaces and the OT-based methods used to analyze, compare, and learn from them.
+
+\section*{Workshop Schedule and Logistics}
+
+\paragraph{Confirmed Invited Speakers} The invited speakers were selected to reflect the main themes of the workshop while bringing technical excellence, complementary expertise and diverse backgrounds. \textbf{All invited speakers listed below have confirmed their participation.}
+\begin{itemize}[leftmargin=6mm]
+  \item \href{https://dmelis.github.io/}{\textbf{David Alvarez-Melis}} (Assistant Professor at Harvard University and researcher at Microsoft Research, USA): machine learning and optimal transport for structured data
+  \item \href{https://annacalissano.com/}{\textbf{Anna Calissano}} (Lecturer, Department of Statistical Science at University College London, UK): statistical analysis of distributions of graphs
+  \item \href{https://marcocuturi.net/}{\textbf{Marco Cuturi}} (Distinguished Engineer at Apple and Professor at ENSAE/CREST, France): scalable optimal transport for machine learning and generative models
+  \item \href{https://people.csail.mit.edu/stefje/}{\textbf{Stefanie Jegelka}} (Professor at TU Munich and visiting professor at MIT, Germany/USA): geometric machine learning, graphs, multi-modal representation learning and learnable algorithms
+  \item \href{https://nkeriven.github.io/}{\textbf{Nicolas Keriven}} (permanent researcher at CNRS, Inria, France): machine learning and signal processing on (random) graphs
+  \item \href{https://skolouri.github.io/}{\textbf{Soheil Kolouri}} (Assistant Professor at Vanderbilt University, USA): computational optimal transport, sliced optimal transport, geometric deep learning, generative models
+  \item \href{https://cmhsp2.github.io/}{\textbf{Clarice Poon}} (Reader at University of Warwick, UK) : (inverse) optimal transport, sparse and structured optimization, imaging sciences
+\end{itemize}
+
+\paragraph{Diversity Statement} 
+We are committed to organizing a workshop that is inclusive and accessible, both in terms of intended participants and scientific perspectives. This commitment has shaped the program and is reflected at several levels: 
+\begin{itemize}[leftmargin=6mm]
+    \item \textbf{Organizers and speakers:} The organizing team, invited speakers and program committee members bring together researchers from different institutions, as well as different career stages, geographic locations, gender representations, and scientific backgrounds.
+    \item \textbf{Scientific scope:} The workshop is designed to connect several complementary research areas, such as optimal transport, geometric deep learning, graph and manifold learning, generative modeling, and applications. This diversity of expertise is central to the goal of creating synergies around the emerging area of Geometric Distributional Deep Learning.
+    \item \textbf{Contributed program:} We will broadly advertise the call for contributions. To encourage participation from researchers at different career stages and with projects at different levels of maturity, we will allow two submission tracks: \textbf{long-format} (5--8 pages) and \textbf{short-format submissions} (2--4 pages). All accepted submissions will be presented as posters, and some high-quality submissions will be selected for contributed talks, with particular attention to giving visibility to excellent work from junior researchers and researchers from underrepresented groups.
+    % and select submissions based on scientific quality, originality and relevance to the workshop. The review process will be double-blind through OpenReview. Contributed talks will be selected among high-quality submissions to give visibility to excellent work from junior researchers (students, postdoctoral researchers) as well as researchers from underrepresented groups or institutions. {\color{red} tiny paper (or extended abstract)+long paper -> diversity. We will allow for two submission tracks, regular papers (5-8 pages) and tiny papers (2-4 pages), the latter to encourage early-stage contributions. All papers will be non-archival, and presented at least as posters. Best regular papers will be offer an oral presentation (x4).}
+    \item \textbf{Accessibility and support:} The high cost of travel and accommodation in Paris may hinder attendance by junior researchers and those with limited institutional support. To mitigate this, the organizers have access to external funding to support registration and travel for selected participants and speakers, with priority given to junior researchers, participants from underrepresented groups in ML research, and participants with limited funding.
+\end{itemize}
+
+% \begin{wraptable}{r}{0.4\textwidth}
+%     \vspace{-2em}
+%     \centering
+%     \small
+%     \caption{Tentative schedule}
+%     \resizebox{0.4\textwidth}{!}{%
+%         \begin{tabular}{cc }
+%             \toprule
+%             Time & Speaker \\
+%             \midrule
+            
+%             9h--10h30 & \textbf{Invited Talks} \\
+            
+%             & Marco Cuturi \\
+%             & Clarice Poon \\
+%             & Nicolas Keriven \\
+            
+%             \midrule
+            
+%             10h30--11h & \textbf{Coffee break} \\
+            
+%             \midrule
+            
+%             11h--11h30 & \textbf{Invited Talk}\\
+            
+%             & David Alvarez-Melis  \\
+            
+%             \midrule
+            
+%             11h30--12h30 & \textbf{Contributed talks (x4)} \\
+            
+%             \midrule
+            
+%             12h30--14h & \textbf{Lunch break} \\
+            
+%             \midrule
+            
+%             14h--15h30 & \textbf{Invited Talks} \\
+            
+%             & Stefanie Jegelka \\
+%             & Soheil Kolouri \\
+            
+%             % & ??? \\
+            
+%             \midrule
+            
+%             15h30-- & \textbf{Poster session} \\
+            
+%             \bottomrule
+%         \end{tabular}%
+%     }
+%      \label{tab:schedule}
+%      \vspace{-6.5em}
+% \end{wraptable}
+
+% \begin{table}[t]
+%     \centering
+%     \caption{Tentative schedule}
+%     \begin{tabular}{ll|ll}
+%         \toprule
+%         \multicolumn{2}{c}{\textbf{Morning}} & \multicolumn{2}{c}{\textbf{Afternoon}} \\
+%         \midrule
+%         \;~9:00--9:05 & Opening & 13:45--14:20 & Invited: S. Jegelka \\
+%         \;~9:05--9:40 & Invited: M. Cuturi & 14:20--14:55 & Invited: S. Kolouri \\
+%         \;~9:40--10:15 & Invited: C. Poon & 14:55--15:25 & Contributed talks ($\times$2) \\
+%         10:15--10:45 & Coffee break & 15:25--15:55 & Coffee break \\
+%         10:45--11:15 & Contributed talks ($\times$2) & 15:55--16:30 & Invited: N. Keriven \\
+%         11:15--12:15 & Poster session I & 16:30--17:05 & Invited: D. Alvarez-Melis \\
+%         12:15--13:45 & Lunch break & 17:05--18:05 & Poster session II \\
+%         \bottomrule
+%     \end{tabular}
+%     \label{tab:schedule}
+% \end{table}
+
+\begin{table}[t]
+    \centering
+    \caption{Tentative schedule}
+    \begin{tabular}{ll|ll}
+        \toprule
+        \multicolumn{2}{c}{\textbf{Morning}} & \multicolumn{2}{c}{\textbf{Afternoon}} \\
+        \midrule
+        \;~9:00--9:05 & Opening & 14:00--14:30 & Invited: S. Jegelka \\
+        \;~9:05--9:35 & Invited: M. Cuturi & 14:30--15:00 & Invited: S. Kolouri \\
+        \;~9:35--10:05 & Invited: C. Poon & 15:00--15:30 & Contributed talks ($\times$2) \\
+        10:05--10:30 & Coffee break & 15:30--16:00 & Coffee break \\ 
+        10:30-11:00 & Invited: N. Keriven & 16:00--16:30 & Invited: A. Calissano \\
+        11:00--11:30 & Contributed talks ($\times$2) & 16:30--17:00 & Invited: D. Alvarez-Melis \\
+        11:30--12:30 & Poster session I & 17:00--18:00 & Poster session II  \\
+        12:30--14:00 & Lunch break & 18:00--18:05 & Closing remarks \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:schedule}
+    \vspace{-.9em}
+\end{table}
+
+\paragraph{Tentative Schedule} \textit{(See \Cref{tab:schedule})}\;  The workshop is planned as an in-person full-day event and features \textbf{seven invited talks} of 30 minutes each (25-minute presentation followed by 5 minutes of questions), \textbf{four 15-minute contributed talks} selected from the submissions, and \textbf{two one-hour poster sessions}. The workshop will also be broadcast to online attendees and we will use a dedicated chat channel to enable remote participants to ask speakers questions and interact with both in-person and online attendees. The poster sessions will be held in person. 
+
+\paragraph{Timeline} We plan to open the call for contributions shortly after workshop acceptance and to use the NeurIPS suggested submission and notification dates, which allows four weeks for reviewing and decision making:    
+\begin{itemize}[leftmargin=6mm]
+    \item Call for contributions opens: July 13, 2026
+    \item Submission deadline: August 29, 2026 (AoE)
+    \item Notification of decisions (oral and poster): September 29, 2026 (AoE)
+    \item Final program announced: October 16, 2026
+    \item Workshop date: December 12 or 13, 2026
+\end{itemize}
+
+\paragraph{Location Preference} Paris only.
+
+\paragraph{Attendance} We expect the workshop to attract approximately \textbf{100 to 250 in-person attendees}. This size would allow us to combine invited talks with contributed presentations, poster sessions, and moderated discussions while preserving opportunities for interaction across communities. We expect an additional \textbf{50 to 150 online attendees}, since NeurIPS provides technical support to broadcast workshops to an online audience.
+
+\paragraph{Technical Needs} We do not anticipate any special technical requirements. The workshop can be run with the standard NeurIPS workshop setup: audiovisual equipment for talks, broadcast support for online attendees, and poster boards for contributed poster sessions.
+
+\newpage
+
+\section{Organizer Information}
+% \paragraph{Organization Team} The following table lists the workshop organizers, with their affiliations and email addresses.
+% \begin{center}
+% \begin{tabular}{lll}
+% \toprule
+% \textbf{Name} & \textbf{Affiliation} & \textbf{Email} \\
+% \midrule
+% Cl\'ement Bonet & CMAP, Ecole Polytechnique & \href{mailto:clement.bonet.mapp@polytechnique.edu}{\texttt{clement.bonet.mapp@polytechnique.edu}} \\
+% Julie Delon & ENS, Université Paris Cité& \href{mailto:julie.delon@ens.fr}{\texttt{julie.delon@ens.fr}}\\
+% Kimia Nadjahi & CNRS, ENS & \href{mailto:kimia.nadjahi@ens.fr}{\texttt{kimia.nadjahi@ens.fr}} \\
+% Youssef Mroueh & IBM & \href{mailto:mroueh@us.ibm.com}{\texttt{mroueh@us.ibm.com}} \\
+% Justin Solomon & MIT & \href{mailto:jsolomon@mit.edu}{\texttt{jsolomon@mit.edu}} \\
+% \bottomrule
+% \end{tabular}
+% \end{center}
+\vspace{-5mm}
+The organizing team brings together researchers whose expertise covers the main research areas of the workshop, across different career stages and institutions. The team also has substantial organizational experience, including workshops and affinity workshops at major ML and graphics conferences (including NeurIPS), and thematic scientific programs at international research institutes. The organizers are listed below in alphabetical order by last name. \\
+
+\href{https://clbonet.github.io/}{\textbf{Cl\'ement Bonet}}, Ecole Polytechnique \hfill \href{mailto:clement.bonet.mapp@polytechnique.edu}{\texttt{clement.bonet.mapp@polytechnique.edu}}
+
+Clément Bonet is an Assistant Professor at the Center of Applied Mathematics (CMAP) of Ecole Polytechnique since September 2025. Prior that, he was a postdoctoral researcher at ENSAE. He defended his PhD on Optimal Transport for Machine Learning. His research focused on developing efficient Optimal Transport methods to compare probability distributions on Riemannian manifolds \citep{bonet2022spherical, bonet2023sliced, bonet2023hyperbolic, bonet2024sliced}. He also studied optimization methods on the space of probability distributions, investigating how changing the geometry can improve convergence guarantees \citep{bonet2024mirror}. \\
+
+\href{https://judelo.github.io/}{\textbf{Julie Delon}}, ENS and Université Paris Cité \hfill \href{mailto:julie.delon@ens.fr}{\texttt{julie.delon@ens.fr}}
+
+Julie Delon is full professor and the associate director of the Department of Mathematics at ENS Paris. Her research focuses on numerical optimal transport and random modeling for applications in machine learning and image processing. She serves as an associate editor for the \textit{SIAM Journal on Imaging Sciences}, the \textit{Journal of Mathematical Imaging and Vision}, and \textit{Information and inference: A Journal of the IMA}. In 2018, she received the Blaise Pascal Prize from the French Academy of Sciences, and in 2024, the Silver Medal from the CNRS (French National Centre for Scientific Research). She has organized numerous national and international workshops, including the \textbf{Mathematics and Image Analysis} (MIA) workshops in Berlin (2023) and Paris (2025), \textbf{Inverse Problems and Generative Models} (Edinburgh, 2024, 2026), and \textbf{Optimal Transport and Structured Data Modeling} (Vancouver, 2022). She also co-organized the \textbf{Mathematics of Imaging thematic quarter} at the Institut Henri Poincaré (Paris) in 2019. This prestigious 4-month program featured a week-long pre-school (85 international participants), 3 international conferences (from 167 to 289 registered attendees), and an extensive series of scientific networking and outreach activities. \\
+
+\href{https://www.ninamiolane.com/}{\textbf{Nina Miolane}}, UC Santa Barbara \hfill \href{mailto:ninamiolane at ucsb.edu}{\texttt{ninamiolane@ucsb.edu}} 
+
+Nina Miolane is an Assistant Professor at UC Santa Barbara, where she directs the Geometric Intelligence Lab and co-directs the REAL AI for Science Initiative and the AI Core of the Bowers Women's Brain Health Initiative. Her research develops geometric and statistical methods for understanding complex data, with applications ranging from representation learning in AI to neural representations in the brain. She is particularly known for her contributions to geometric ML and for co-leading the development of Geomstats, an open-source library that brings Riemannian geometry tools to machine learning. A central theme in her work is the use of manifolds, symmetries, and geometric structure as a common language for studying both biological and artificial intelligence. Beyond her scientific contributions, she has played a leading role in building interdisciplinary communities at the interface of geometry and machine learning, including co-organizing several editions of the \textbf{NeurReps workshop} (Symmetry and Geometry in Neural Representations) at NeurIPS, as well as multiple workshops at CVPR, ICLR, and the Banff International Research Station (BIRS). \\
+
+\href{https://research.ibm.com/people/youssef-mroueh}{\textbf{Youssef Mroueh}}, IBM Research \hfill \href{mailto:mroueh@us.ibm.com}{\texttt{mroueh@us.ibm.com}} 
+
+Youssef Mroueh is a Principal Research Scientist at IBM Research (IBM T.J Watson Research Center, Yorktown Heights, NYC), and a Principal Investigator at the MIT–IBM Watson AI Lab. His research focuses on trustworthy machine learning, generative AI, optimal transport, and optimization over probability spaces, with applications to alignment, synthetic data, and reliable foundation models. He has published extensively in machine learning and applied mathematics, and his work connects mathematical foundations with practical algorithms for controllable and trustworthy AI systems. He regularly serves as an Area Chair for NeurIPS, ICML, and ICLR, and has co-organized \textbf{workshops at ICML 2018 and ICAF 2024} on learning from limited labels,  synthetic data, and GenAI in finance. \\
+
+\href{https://kimiandj.github.io/}{\textbf{Kimia Nadjahi}}, CNRS and ENS \hfill \href{mailto:kimia.nadjahi@ens.fr}{\texttt{kimia.nadjahi@ens.fr}}
+
+Kimia Nadjahi is a permanent researcher at CNRS, ENS Paris since February 2024. Her research focuses on optimal transport and its applications to machine learning~\cite{boite2026expectedbatchoptimaltransport,thurin2025optimal,thurin2026convergenceratesdistributionmatching,kolouri2019generalized}. She has also studied asymmetries and invariances in low-rank adaptation (LoRA), providing a geometric perspective for more efficient parameter-efficient fine-tuning of large language models~\cite{zhu2024asymmetry,castin2026balanced}. She has been involved in the organization of several workshops, including the \textbf{Women in Machine Learning (WiML) Workshop at NeurIPS 2022}, where she served as \textbf{Student Program and Funding Chair}. The workshop was a two-day hybrid event with 650 participants, 14 oral presentations, and two poster sessions with 160 accepted submissions. This experience gives her direct expertise in coordinating large-scale NeurIPS-affiliated events. \\ %, managing scientific submissions, and supporting inclusive participation.
+
+
+\href{https://people.csail.mit.edu/jsolomon/}{\textbf{Justin Solomon}}, MIT \hfill \href{mailto:jsolomon@mit.edu}{\texttt{jsolomon@mit.edu}}
+
+Justin Solomon is an Associate Professor of Electrical Engineering and Computer Science as well as the Associate Dean for Engineering Education at MIT.  He leads the Geometric Data Processing group in MIT's Computer Science and Artificial Intelligence Laboratory (CSAIL), which studies problems at the intersection of geometry, large-scale optimization, and applications including machine learning.  Over the last decade, Prof.\ Solomon and his team pioneered algorithms for solving optimal transport on geometrically-structured domains, leading to numerous publications in top venues for machine learning, computer graphics, numerical methods, and other domains.  Beyond his research, Prof.\ Solomon is an experienced program coordinator and organizer, with experience including founding, funding, and organizing \textbf{the annual Summer Geometry Initiative (SGI) program}; serving as Assistant Technical Papers chair for \textbf{ACM SIGGRAPH}; chairing the \textbf{Symposium on Geometry Processing (SGP)}; and organizing countless workshops/tutorials at conferences including NeurIPS, SGP, SIGGRAPH, the Isaac Newton Institute for Mathematical Sciences, the Erwin Schr\"odinger International Institute (ESI), and the Banff International Research Station (BIRS).
+
+
+\section*{Program Committee}
+
+% The reviewing process will be done in a double blind fashion using open review. Each member of the Program Committee will have no more than 3 papers to reviews, and we expect each submitted paper to get 3 reviews. The organizers will make sure that there are no conflict of interest in the reviewing process, \emph{i.e.} reviewer will not review papers from their own institution, nor from co-authors. We provide a list of people who already agreed to be member of the program committee, and we will recruit more by requiring at least one author per submission to review, and recruiting in our social network and academic groups. We include below an initial list of {\color{red} 24} program committee members who already agreed to be part.
+
+The reviewing process for contributed submissions will be managed through OpenReview in a double-blind manner. Each submitted paper will receive at least three reviews, and each Program Committee member will be assigned at most three papers. The organizers will carefully manage conflicts of interest during the assignment process.
+
+Below we provide a list of colleagues who have already agreed to serve as Program Committee members. If needed, we will recruit additional members through our professional networks and by inviting qualified authors of submitted papers to review.
+
+\paragraph{Confirmed Program Committee Members} \ 
+
+Tal Amir (Technion Faculty of Mathematics), Yikun Bai (Purdue University), Jannis Chemseddine (TU Berlin), Louisa Cornelis (UCSB), Nicolas Courty (Université de Bretagne Sud), Floor Eijkelboom (University of Amsterdam), Erell Gachon (Université de Bordeaux), Thibaut Germain (Ecole Polytechnique), Johannes Hertrich (Georg August University of Göttingen), Pierre Houedry (Inria), Ya-Wei Eileen Lin (TU Munich), Rocio Diaz Martin (Florida State University), Ivan Medri (University of Virginia), Eduardo Fernandes Montesuma (SigmaNova), Khai Nguyen (University of Texas), Mathilde Papillon (UCSB), Moritz Piening (TU Berlin), Alison Pouplin (Bayer AG, Berlin), Christopher Scarvelis (Rutgers University), Viktor Stein (TU Munich), Behrooz Tahmasebi (Harvard University), Huy Tran (Vanderbilt University), Viet-Hoang Tran (University of Singapore), Sharvaree Vadgama (UC San Diego), Titouan Vayer (Inria)
+
+% Tentative (emails sent) Charlotte Laclau, Daniel Herbst (TUM), Levi Rauchwerger (Princeton), Florian Beier (TU Berlin), Tan Minh Nguyen (University of Singapore), Rafael Pereira Eufrazio (Instituto Federal de Educação), 
+
+% ADD Number of pages articles accepted?
+% \begin{itemize}
+%     \item double blinded, open review
+%     \item no more than 3 papers for PC members
+%     \item 3 reviews per paper
+%     \item no conflict of interest, i.e. don't review people from the same institution or co-authors
+%     \item Request one author per submission to review
+%     \item will recruit PC members
+% \end{itemize}
+
+
+
+
+\newpage
+
+{
+\bibliography{bib.bib}{}
+\bibliographystyle{plain}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

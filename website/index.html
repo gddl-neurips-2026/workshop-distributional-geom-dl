@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Distributional Deep Learning | NeurIPS 2026 Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">GDDL 2026</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#topics">Topics</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#speakers">Speakers</a></li>
+                <li><a href="#organizers">Organizers</a></li>
+                <li><a href="#cfp">Call for Papers</a></li>
+                <li><a href="#venue">Venue</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-badge">NeurIPS 2026 Workshop</div>
+            <h1>Geometric Distributional Deep Learning</h1>
+            <p class="hero-tagline">Bridging Optimal Transport, Learning and Structured Data</p>
+            <div class="hero-details">
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>December 12-13, 2026</span>
+                </div>
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Paris, France</span>
+                </div>
+            </div>
+            <a href="#cfp" class="hero-cta">Submit Your Work</a>
+        </div>
+    </header>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title">About the Workshop</h2>
+            <div class="about-content">
+                <p>Modern machine learning increasingly relies on representing complex data through their <strong>geometric structure</strong> or <strong>probability distribution</strong>. Geometric Deep Learning has made it possible to encode symmetries, invariances, equivariance, and relational information in non-Euclidean domains, such as graphs and manifolds, with many successful applications, ranging from protein structure prediction to neuroscience.</p>
+                <p>In parallel, viewing data or features as probability distributions has led to powerful methodologies in deep learning. In particular, <strong>optimal transport</strong> (OT) provides a natural framework for comparing, aligning, and transforming data distributions, and has contributed to notable advances in generative modeling, attention-based architectures, and representation learning.</p>
+                <p>This workshop focuses on <strong>Geometric Distributional Deep Learning</strong>: learning systems that jointly model the geometry and distributional nature of data, features and representations. Our goal is to bring together researchers in geometric deep learning, computational optimal transport, generative modeling, graph and manifold learning, and deep learning theory around a shared question:</p>
+                <blockquote>How can geometry and distributions be combined to design more scalable, efficient, and interpretable models for structured data?</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section id="topics" class="section topics">
+        <div class="container">
+            <h2 class="section-title">Topics of Interest</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <h3>Geometry-aware Transport</h3>
+                    <p>Adapting optimal transport to graphs, manifolds, and physical systems</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <h3>Neural Architectures</h3>
+                    <p>Processing probability distributions on graphs and manifolds with GNNs</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                    </div>
+                    <h3>Scalable Computation</h3>
+                    <p>Sliced methods, entropic regularization, and neural approximations at scale</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h3>Generative Models</h3>
+                    <p>Diffusion on manifolds, normalizing flows on structured spaces</p>
+                </div>
+                <div class="topic-card">
+                    <div class="topic-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <h3>Scientific Applications</h3>
+                    <p>Molecular modeling, climate prediction, neuroscience, physical sciences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="section schedule">
+        <div class="container">
+            <h2 class="section-title">Schedule</h2>
+            <p class="schedule-subtitle">Full-day workshop with invited talks, contributed presentations, and poster sessions</p>
+
+            <div class="schedule-grid">
+                <div class="schedule-block">
+                    <h3 class="schedule-block-title">Morning</h3>
+                    <div class="schedule-items">
+                        <div class="schedule-item">
+                            <span class="time">9:00 - 9:05</span>
+                            <span class="event">Opening Remarks</span>
+                        </div>
+                        <div class="schedule-item invited">
+                            <span class="time">9:05 - 9:35</span>
+                            <span class="event">Invited Talk: Marco Cuturi</span>
+                        </div>
+                        <div class="schedule-item invited">
+                            <span class="time">9:35 - 10:05</span>
+                            <span class="event">Invited Talk: Clarice Poon</span>
+                        </div>
+                        <div class="schedule-item break">
+                            <span class="time">10:05 - 10:30</span>
+                            <span class="event">Coffee Break</span>
+                        </div>
+                        <div class="schedule-item invited">
+                            <span class="time">10:30 - 11:00</span>
+                            <span class="event">Invited Talk: Nicolas Keriven</span>
+                        </div>
+                        <div class="schedule-item contributed">
+                            <span class="time">11:00 - 11:30</span>
+                            <span class="event">Contributed Talks (x2)</span>
+                        </div>
+                        <div class="schedule-item poster">
+                            <span class="time">11:30 - 12:30</span>
+                            <span class="event">Poster Session I</span>
+                        </div>
+                        <div class="schedule-item break">
+                            <span class="time">12:30 - 14:00</span>
+                            <span class="event">Lunch Break</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-block">
+                    <h3 class="schedule-block-title">Afternoon</h3>
+                    <div class="schedule-items">
+                        <div class="schedule-item invited">
+                            <span class="time">14:00 - 14:30</span>
+                            <span class="event">Invited Talk: Stefanie Jegelka</span>
+                        </div>
+                        <div class="schedule-item invited">
+                            <span class="time">14:30 - 15:00</span>
+                            <span class="event">Invited Talk: Soheil Kolouri</span>
+                        </div>
+                        <div class="schedule-item contributed">
+                            <span class="time">15:00 - 15:30</span>
+                            <span class="event">Contributed Talks (x2)</span>
+                        </div>
+                        <div class="schedule-item break">
+                            <span class="time">15:30 - 16:00</span>
+                            <span class="event">Coffee Break</span>
+                        </div>
+                        <div class="schedule-item invited">
+                            <span class="time">16:00 - 16:30</span>
+                            <span class="event">Invited Talk: Anna Calissano</span>
+                        </div>
+                        <div class="schedule-item invited">
+                            <span class="time">16:30 - 17:00</span>
+                            <span class="event">Invited Talk: David Alvarez-Melis</span>
+                        </div>
+                        <div class="schedule-item poster">
+                            <span class="time">17:00 - 18:00</span>
+                            <span class="event">Poster Session II</span>
+                        </div>
+                        <div class="schedule-item">
+                            <span class="time">18:00 - 18:05</span>
+                            <span class="event">Closing Remarks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="speakers" class="section speakers">
+        <div class="container">
+            <h2 class="section-title">Invited Speakers</h2>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <div class="speaker-photo" style="background-image: url('images/speakers/david_alvarez_melis.jpg');">
+                        <span class="speaker-initials">DA</span>
+                    </div>
+                    <h3>David Alvarez-Melis</h3>
+                    <p class="speaker-affiliation">Harvard / Microsoft Research</p>
+                    <p class="speaker-topic">ML & OT for structured data</p>
+                    <a href="https://dmelis.github.io/" target="_blank" class="speaker-link">Website</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-photo" style="background-image: url('images/speakers/anna_calissano.jpg');">
+                        <span class="speaker-initials">AC</span>
+                    </div>
+                    <h3>Anna Calissano</h3>
+                    <p class="speaker-affiliation">University College London</p>
+                    <p class="speaker-topic">Statistical analysis of graph distributions</p>
+                    <a href="https://annacalissano.com/" target="_blank" class="speaker-link">Website</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-photo" style="background-image: url('images/speakers/marco_cuturi.jpg');">
+                        <span class="speaker-initials">MC</span>
+                    </div>
+                    <h3>Marco Cuturi</h3>
+                    <p class="speaker-affiliation">Apple / ENSAE-CREST</p>
+                    <p class="speaker-topic">Scalable OT, generative models</p>
+                    <a href="https://marcocuturi.net/" target="_blank" class="speaker-link">Website</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-photo" style="background-image: url('images/speakers/stefanie_jegelka.jpg');">
+                        <span class="speaker-initials">SJ</span>
+                    </div>
+                    <h3>Stefanie Jegelka</h3>
+                    <p class="speaker-affiliation">TU Munich / MIT</p>
+                    <p class="speaker-topic">Geometric ML, graphs, algorithms</p>
+                    <a href="https://people.csail.mit.edu/stefje/" target="_blank" class="speaker-link">Website</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-photo" style="background-image: url('images/speakers/nicolas_keriven.jpg');">
+                        <span class="speaker-initials">NK</span>
+                    </div>
+                    <h3>Nicolas Keriven</h3>
+                    <p class="speaker-affiliation">CNRS / Inria</p>
+                    <p class="speaker-topic">ML & signal processing on graphs</p>
+                    <a href="https://nkeriven.github.io/" target="_blank" class="speaker-link">Website</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-photo" style="background-image: url('images/speakers/soheil_kolouri.jpg');">
+                        <span class="speaker-initials">SK</span>
+                    </div>
+                    <h3>Soheil Kolouri</h3>
+                    <p class="speaker-affiliation">Vanderbilt University</p>
+                    <p class="speaker-topic">Computational OT, sliced OT, geometric DL</p>
+                    <a href="https://skolouri.github.io/" target="_blank" class="speaker-link">Website</a>
+                </div>
+
+                <div class="speaker-card">
+                    <div class="speaker-photo" style="background-image: url('images/speakers/clarice_poon.jpg');">
+                        <span class="speaker-initials">CP</span>
+                    </div>
+                    <h3>Clarice Poon</h3>
+                    <p class="speaker-affiliation">University of Warwick</p>
+                    <p class="speaker-topic">Inverse OT, sparse optimization, imaging</p>
+                    <a href="https://cmhsp2.github.io/" target="_blank" class="speaker-link">Website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organizers" class="section organizers">
+        <div class="container">
+            <h2 class="section-title">Organizers</h2>
+            <div class="organizers-grid">
+                <div class="organizer-card">
+                    <div class="organizer-photo" style="background-image: url('images/organizers/clement_bonet.jpg');">
+                        <span class="organizer-initials">CB</span>
+                    </div>
+                    <h3>Clément Bonet</h3>
+                    <p class="organizer-affiliation">Ecole Polytechnique</p>
+                    <a href="https://clbonet.github.io/" target="_blank" class="organizer-link">Website</a>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="organizer-photo" style="background-image: url('images/organizers/julie_delon.jpg');">
+                        <span class="organizer-initials">JD</span>
+                    </div>
+                    <h3>Julie Delon</h3>
+                    <p class="organizer-affiliation">ENS / Université Paris Cité</p>
+                    <a href="https://judelo.github.io/" target="_blank" class="organizer-link">Website</a>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="organizer-photo" style="background-image: url('images/organizers/nina_miolane.jpg');">
+                        <span class="organizer-initials">NM</span>
+                    </div>
+                    <h3>Nina Miolane</h3>
+                    <p class="organizer-affiliation">UC Santa Barbara</p>
+                    <a href="https://www.ninamiolane.com/" target="_blank" class="organizer-link">Website</a>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="organizer-photo" style="background-image: url('images/organizers/youssef_mroueh.jpg');">
+                        <span class="organizer-initials">YM</span>
+                    </div>
+                    <h3>Youssef Mroueh</h3>
+                    <p class="organizer-affiliation">IBM Research</p>
+                    <a href="https://research.ibm.com/people/youssef-mroueh" target="_blank" class="organizer-link">Website</a>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="organizer-photo" style="background-image: url('images/organizers/kimia_nadjahi.jpg');">
+                        <span class="organizer-initials">KN</span>
+                    </div>
+                    <h3>Kimia Nadjahi</h3>
+                    <p class="organizer-affiliation">CNRS / ENS</p>
+                    <a href="https://kimiandj.github.io/" target="_blank" class="organizer-link">Website</a>
+                </div>
+
+                <div class="organizer-card">
+                    <div class="organizer-photo" style="background-image: url('images/organizers/justin_solomon.jpg');">
+                        <span class="organizer-initials">JS</span>
+                    </div>
+                    <h3>Justin Solomon</h3>
+                    <p class="organizer-affiliation">MIT</p>
+                    <a href="https://people.csail.mit.edu/jsolomon/" target="_blank" class="organizer-link">Website</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cfp" class="section cfp">
+        <div class="container">
+            <h2 class="section-title">Call for Papers</h2>
+            <div class="cfp-content">
+                <div class="cfp-main">
+                    <p>We invite submissions on topics related to geometric distributional deep learning, including but not limited to:</p>
+                    <ul>
+                        <li>Geometry-aware optimal transport methods</li>
+                        <li>Neural architectures for distributions on non-Euclidean domains</li>
+                        <li>Scalable computational methods for structured spaces</li>
+                        <li>Generative models on graphs and manifolds</li>
+                        <li>Applications in molecular modeling, climate, neuroscience</li>
+                    </ul>
+
+                    <h3>Submission Tracks</h3>
+                    <div class="tracks">
+                        <div class="track">
+                            <span class="track-badge long">Long</span>
+                            <span class="track-desc">5-8 pages (excluding references)</span>
+                        </div>
+                        <div class="track">
+                            <span class="track-badge short">Short</span>
+                            <span class="track-desc">2-4 pages for early-stage work</span>
+                        </div>
+                    </div>
+                    <p class="cfp-note">All accepted papers will be presented as posters. Selected papers will be invited for contributed talks. Review is double-blind via OpenReview.</p>
+                    <a href="#" class="cfp-button">Submit via OpenReview</a>
+                </div>
+
+                <div class="cfp-dates">
+                    <h3>Important Dates</h3>
+                    <div class="date-item">
+                        <span class="date-label">Submission Deadline</span>
+                        <span class="date-value">August 29, 2026 (AoE)</span>
+                    </div>
+                    <div class="date-item">
+                        <span class="date-label">Notification</span>
+                        <span class="date-value">September 29, 2026 (AoE)</span>
+                    </div>
+                    <div class="date-item">
+                        <span class="date-label">Final Program</span>
+                        <span class="date-value">October 16, 2026</span>
+                    </div>
+                    <div class="date-item highlight">
+                        <span class="date-label">Workshop</span>
+                        <span class="date-value">December 12-13, 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="venue" class="section venue">
+        <div class="container">
+            <h2 class="section-title">Venue</h2>
+            <div class="venue-card">
+                <div class="venue-info">
+                    <h3>Palais des Congrès de Paris</h3>
+                    <p class="venue-address">2 Place de la Porte Maillot, 75017 Paris, France</p>
+                    <p class="venue-desc">NeurIPS 2026 will be held at the Palais des Congrès de Paris, one of Europe's largest and most modern convention centers. Located in the 17th arrondissement near the Arc de Triomphe, it offers excellent public transport access via Metro Line 1 (Porte Maillot station) and RER C.</p>
+                    <div class="venue-features">
+                        <span class="venue-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            NeurIPS 2026
+                        </span>
+                        <span class="venue-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            December 12-13, 2026
+                        </span>
+                        <span class="venue-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            Full-day workshop
+                        </span>
+                    </div>
+                </div>
+                <div class="venue-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.5!2d2.2831!3d48.8782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66f9a4c7f1f6d%3A0x1e3a3b4c5d6e7f8a!2sPalais%20des%20Congr%C3%A8s%20de%20Paris!5e0!3m2!1sen!2sfr!4v1689000000000!5m2!1sen!2sfr"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">GDDL 2026</span>
+                    <p>Geometric Distributional Deep Learning Workshop</p>
+                    <p>NeurIPS 2026 | Paris, France</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About</a>
+                    <a href="#speakers">Speakers</a>
+                    <a href="#cfp">Call for Papers</a>
+                    <a href="#venue">Venue</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>For inquiries, please contact the organizers:</p>
+                    <a href="mailto:gddl_neurips26@gmail.com">gddl_neurips26@gmail.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Part of NeurIPS 2026 Workshop Program</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

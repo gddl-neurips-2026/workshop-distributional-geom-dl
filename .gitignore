@@ -1,9 +1,8 @@
-# Ignore everything
-*
-
-# Except website folder
-!website/
-!website/**
-
-# And gitignore itself
-!.gitignore
+# Ignore specific files
+main (1).tex
+plan.md
+*.tex
+*.aux
+*.log
+*.pdf
+.DS_Store

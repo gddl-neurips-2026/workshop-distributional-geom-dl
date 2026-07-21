@@ -765,6 +765,10 @@ img {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.cfp-button.template {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 .cfp-button:hover {
     background: var(--accent-light);
     transform: translateY(-2px);

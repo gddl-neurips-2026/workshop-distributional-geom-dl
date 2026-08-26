@@ -813,6 +813,10 @@ img {
     font-family: 'Space Grotesk', sans-serif;
 }
 
+.old-date {
+    text-decoration: line-through;
+}
+
 .date-item.highlight {
     background: rgba(249, 115, 22, 0.2);
     margin: 0.5rem -0.75rem -0.75rem;
